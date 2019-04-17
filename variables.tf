@@ -80,3 +80,8 @@ variable "kubernetes_version" {
   default     = ""
   description = "Desired Kubernetes master version. If you do not specify a value, the latest available version is used."
 }
+
+variable "log_types" {
+  type        = "list"
+  default     = []
+}

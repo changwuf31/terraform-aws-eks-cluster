@@ -106,6 +106,8 @@ resource "aws_eks_cluster" "default" {
     endpoint_public_access  = "false"
   }
 
+  enabled_cluster_log_types = ["${var.log_types}"]
+
   depends_on = [
     "aws_iam_role_policy_attachment.amazon_eks_cluster_policy",
     "aws_iam_role_policy_attachment.amazon_eks_service_policy",
