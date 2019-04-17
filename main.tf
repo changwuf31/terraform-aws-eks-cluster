@@ -102,6 +102,8 @@ resource "aws_eks_cluster" "default" {
   vpc_config {
     security_group_ids = ["${join("", aws_security_group.default.*.id)}"]
     subnet_ids         = ["${var.subnet_ids}"]
+    endpoint_private_access = "true"
+    endpoint_public_access  = "false"
   }
 
   depends_on = [
